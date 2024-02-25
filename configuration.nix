@@ -6,7 +6,8 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -16,11 +17,10 @@
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-  nix.settings.experimental-features = ["nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -86,7 +86,7 @@
     packages = with pkgs; [
       firefox
       kate
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -100,17 +100,23 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-vim
-google-chrome
-neovim
-i3
-git
-
-  #  wget
+    vim
+    google-chrome
+    neovim
+    i3
+    git
+    vscode
+    wget
+    htop
+    unzip
+    zsh
+    sublime #might replace with newer version, ugly
+    uutils-coreutils-noprefix #installed in case other utilities are needed
+    nixpkgs-fmt #used in vscode formatter
   ];
   environment.shellAliases = {
-    rebuild = "sudo nixos-rebuild switch";
-};
+    rebuild = "sudo nixos-rebuild switch -I nixos-config=/home/borazan/nixos-config/";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
