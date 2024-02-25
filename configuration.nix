@@ -106,7 +106,7 @@
     i3
     git
     vscode
-    wget
+    wget #like curl
     htop
     unzip
     zsh
