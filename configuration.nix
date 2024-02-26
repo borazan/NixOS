@@ -93,9 +93,9 @@
 
   home-manager = {
     #also pass inputs to home-manager modules
-    specialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs; };
     users = {
-      "borazan" = import ./home.nix;
+      borazan.imports = [ ./home.nix; ];
     };
   };
 
