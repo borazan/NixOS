@@ -18,12 +18,19 @@
     {
     
       nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-          extraSpecialArgs = {inherit inputs; };
-          modules = [ 
-            ./configuration.nix
-            inputs.home-manager.nixosModules.default
+          specialArgs = {inherit inputs; };
+          modules = [
+      ./configuration.nix
+      {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.users.borazan = { ... }: {
+          imports = [
+            ./home.nix
           ];
         };
-
-    };
+      }
+    ];
+  };
+};
 }
