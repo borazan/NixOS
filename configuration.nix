@@ -96,8 +96,8 @@
     specialArgs = {inherit inputs; };
     users = {
       "borazan" = import ./home.nix;
-    }
-  }
+    };
+  };
 
   # Enable automatic login for the user.
   services.xserver.displayManager.autoLogin.enable = true;
