@@ -93,6 +93,10 @@
   #used for github ssh
   programs.ssh = {
     enable = true;
-    addKeysToAgent = "github"; # Optionally, automatically add SSH keys to the agent
+    addKeysToAgent = "yes"; # Optionally, automatically add SSH keys to the agent
+  };
+  
+  programs.zsh.prezto.ssh = {
+    identities = [ "github "];
   };
 }
