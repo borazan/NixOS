@@ -71,9 +71,12 @@
     # EDITOR = "emacs";
   };
 
+  programs.home-manager.enable = true;
+
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
+    enableCompletion = true;
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" "thefuck"];
@@ -89,7 +92,6 @@
       pu = "push";
       co = "checkout";
       cm = "commit";
-      ad = "add *";
     };
   };
 }
