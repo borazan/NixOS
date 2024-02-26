@@ -87,7 +87,6 @@
       gitadd = "!git add . && git status";
       pu = "push";
       co = "checkout";
-      cm = "commit";
     };
   };
 }
