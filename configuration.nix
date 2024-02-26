@@ -95,7 +95,7 @@
     #also pass inputs to home-manager modules
     extraSpecialArgs = { inherit inputs; };
     users = {
-      borazan.imports = [ ./home.nix; ];
+      borazan.imports = [ ./home.nix];
     };
   };
 
