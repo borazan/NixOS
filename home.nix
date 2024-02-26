@@ -72,4 +72,16 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+   programs.zsh = {
+    enable = true; # Enable Zsh
+    ohMyZsh = {
+      enable = true; # Enable Oh My Zsh if you want to use it
+      theme = "agnoster"; # Set your preferred theme
+      plugins = [ "git" "docker" ]; # Enable any plugins you want
+    };
+  };
+
+  # Set Zsh as the default shell
+  users.users.borazan.shell = pkgs.zsh;
 }

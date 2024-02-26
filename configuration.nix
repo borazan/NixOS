@@ -124,7 +124,7 @@
     nixpkgs-fmt #used in vscode formatter
   ];
   environment.shellAliases = {
-    rebuild = "sudo nixos-rebuild switch -I nixos-config=/home/borazan/nixos-config/";
+    rebuild = " sudo nixos-rebuild switch --flake /home/borazan/nixos-config#default";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
