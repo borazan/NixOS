@@ -143,6 +143,7 @@
 
   environment.shells = with pkgs; [ zsh ];
   programs.zsh.enable = true;
+  programs.ssh.startAgent = true;
   users.defaultUserShell = pkgs.zsh;
 
   environment.shellAliases = {

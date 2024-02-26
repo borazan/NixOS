@@ -89,4 +89,10 @@
       co = "checkout";
     };
   };
+
+  #used for github ssh
+  programs.ssh = {
+    enable = true;
+    addKeysToAgent = "github"; # Optionally, automatically add SSH keys to the agent
+  };
 }
