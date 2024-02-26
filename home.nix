@@ -70,12 +70,12 @@
     # EDITOR = "emacs";
   };
 
-   programs.zsh = {
-  ... # Your zsh config
- oh-my-zsh = {
+  programs.zsh = {
     enable = true;
-    plugins = [ "git" "thefuck" ];
-    theme = "robbyrussell";
+    oh-my-zsh = {
+      enable = true;
+      plugins = [ "git" "thefuck" ];
+      theme = "robbyrussell";
+    };
   };
-};
 }
