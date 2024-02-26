@@ -125,7 +125,9 @@
     zsh
     sublime #might replace with newer version, ugly
     uutils-coreutils-noprefix #installed in case other utilities are needed
-    nixpkgs-fmt #used in vscode formatter
+    nixpkgs-fmt #used in vscode nix code formatter
+    alacritty #terminal emulator
+    alacritty-theme #themes for alacritty
   ];
 
   environment.shells = with pkgs; [ zsh ];
