@@ -84,6 +84,7 @@
     userName = "borazan";
     userEmail = "boratuncel@gmail.com";
     aliases = {
+      gitadd = "!git add . && git status";
       pu = "push";
       co = "checkout";
       cm = "commit";

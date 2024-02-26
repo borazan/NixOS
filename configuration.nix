@@ -136,7 +136,6 @@
 
   environment.shellAliases = {
     rebuild = " sudo nixos-rebuild switch --flake /home/borazan/nixos-config#default";
-    gitadd = "sadd = !sh -c 'cd -- ${GIT_PREFIX:-.} && git add -- "$@" && git status' --"
   };
 
   # Some programs need SUID wrappers, can be configured further or are
