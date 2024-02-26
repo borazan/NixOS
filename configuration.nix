@@ -123,6 +123,10 @@
     uutils-coreutils-noprefix #installed in case other utilities are needed
     nixpkgs-fmt #used in vscode formatter
   ];
+
+  environment.shells = with pkgs; [ zsh ];
+  users.defaultUserShell = pkgs.zsh;
+
   environment.shellAliases = {
     rebuild = " sudo nixos-rebuild switch --flake /home/borazan/nixos-config#default";
   };

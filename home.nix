@@ -73,7 +73,4 @@
    programs.zsh = {
     enable = true; # Enable Zsh
   };
-
-  # Set Zsh as the default shell
-  environment.shells = with pkgs; [ zsh ];
 }
