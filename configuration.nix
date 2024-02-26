@@ -19,6 +19,13 @@
   #AMD GPU
   boot.initrd.kernelModules = [ "amdgpu" ];
   services.xserver.videoDrivers = [ "amdgpu" ];
+  hardware.opengl = {
+    # Mesa
+    enable = true;
+
+    # Vulkan
+    driSupport = true;
+  };
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -128,6 +135,10 @@
     nixpkgs-fmt #used in vscode nix code formatter
     alacritty #terminal emulator
     alacritty-theme #themes for alacritty
+  ];
+
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
   ];
 
   environment.shells = with pkgs; [ zsh ];

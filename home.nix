@@ -90,12 +90,4 @@
       cm = "commit";
     };
   };
-
-   programs.alacritty = {
-    enable = true;
-    settings = {
-    	font.size = 12;
-      shell.program = "/run/current-system/sw/bin/zsh";
-    };
-  };
 }

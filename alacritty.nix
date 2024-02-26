@@ -6,19 +6,29 @@
       env = {
         TERM = "xterm-256color";
       };
-      background_opacity = 0.90;
       window = {
         padding = { x = 10; y = 10; };
-        decorations = "buttonless";
+        decorations = "Full";
+        opacity = 0.9;
       };
       font = {
         size = 12.0;
-        use_thin_strokes = true;
+        normal = {
+          family = "FiraCode Nerd Font";
+          style = "Regular";
+        };
+        bold = {
+          family = "FiraCode Nerd Font";
+          style = "Bold";
+        };
+        italic = {
+          family = "FiraCode Nerd Font";
+          style = "Italic";
+        };
       };
       cursor = { style = "Beam"; };
       shell = {
         program = "${pkgs.zsh}/bin/zsh";
-        args = [ "-c" "neofetch" ];
       };
       colors = {
         primary = { background = "0x1b182c"; foreground = "0xcbe3e7"; };
