@@ -73,10 +73,23 @@
 
   programs.zsh = {
     enable = true;
+    enableAutosuggestions = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "thefuck" "zsh-autosuggestions"];
+      plugins = [ "git" "thefuck"];
       theme = "robbyrussell";
+    };
+  };
+
+  programs.git = {
+    enable = true;
+    userName = "borazan";
+    userEmail = "boratuncel@gmail.com";
+    aliases = {
+      pu = "push";
+      co = "checkout";
+      cm = "commit";
+      ad = "add *";
     };
   };
 }
