@@ -16,6 +16,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  #AMD GPU
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  services.xserver.videoDrivers = [ "amdgpu" ];
+
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # Configure network proxy if necessary
@@ -95,7 +99,7 @@
     #also pass inputs to home-manager modules
     extraSpecialArgs = { inherit inputs; };
     users = {
-      borazan.imports = [ ./home.nix];
+      borazan.imports = [ ./home.nix ];
     };
   };
 
