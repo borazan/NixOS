@@ -63,8 +63,8 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    xkb.layout = "us";
+    xkb.variant = "";
   };
 
   # Enable CUPS to print documents.
@@ -127,14 +127,13 @@
     vim
     neovim
     vimPlugins.LazyVim
-    geany
+    obsidian
     google-chrome
     discord
-    i3
     git
     vscode
     wget #like curl
-    htop
+    btop
     nnn
     unzip
     zsh
@@ -156,6 +155,7 @@
 
   environment.shellAliases = {
     rebuild = " sudo nixos-rebuild switch --flake /home/borazan/nixos-config#default";
+    nvimflake = "nix run github:jordanisaacs/neovim-flake#nix";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
