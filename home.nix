@@ -95,7 +95,8 @@
     enable = true;
     addKeysToAgent = "yes"; # Optionally, automatically add SSH keys to the agent
   };
-  
+  services.ssh-agent.enable = true;
+
   programs.zsh.prezto.ssh = {
     identities = [ "github "];
   };
