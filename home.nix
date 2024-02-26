@@ -78,5 +78,5 @@
   };
 
   # Set Zsh as the default shell
-  users.users.borazan.shell = pkgs.zsh;
+  users.defaultUserShell = pkgs.zsh;
 }
