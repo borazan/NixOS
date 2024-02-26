@@ -71,7 +71,7 @@
   services.printing.enable = true;
 
   # Enable bluetooth
-   hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
 
   # Enable sound with pipewire.
@@ -133,6 +133,7 @@
     vscode
     wget #like curl
     htop
+    nnn
     unzip
     zsh
     sublime #might replace with newer version, ugly
