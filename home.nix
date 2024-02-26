@@ -71,6 +71,11 @@
   };
 
    programs.zsh = {
-    enable = true; # Enable Zsh
+  ... # Your zsh config
+ oh-my-zsh = {
+    enable = true;
+    plugins = [ "git" "thefuck" ];
+    theme = "robbyrussell";
   };
+};
 }
