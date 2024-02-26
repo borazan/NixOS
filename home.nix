@@ -75,7 +75,7 @@
 
    programs.zsh = {
     enable = true; # Enable Zsh
-    ohMyZsh = {
+    oh-my-zsh = {
       enable = true; # Enable Oh My Zsh if you want to use it
       theme = "agnoster"; # Set your preferred theme
       plugins = [ "git" "docker" ]; # Enable any plugins you want
