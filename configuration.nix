@@ -126,6 +126,8 @@
   environment.systemPackages = with pkgs; [
     vim
     neovim
+    vimPlugins.LazyVim
+    geany
     google-chrome
     discord
     i3
