@@ -77,6 +77,14 @@
       plugins = [ "git" "thefuck"];
       theme = "robbyrussell";
     };
+    # Use `interactiveShellInit` to define shell functions for interactive sessions
+    initExtra = ''
+      push() {
+        eval "$(ssh-agent -s)"
+        ssh-add ~/.ssh/github
+        git push
+      }
+    '';
   };
 
   programs.git = {
