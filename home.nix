@@ -4,7 +4,6 @@
    imports = [
     (import ./alacritty.nix { inherit pkgs; })
     (import ./profiles/hyprland/hyprland.nix { inherit pkgs; }) #comment out if using KDE instead of hyprland
-    # Import other modules here
   ];
   home.username = "borazan";
   home.homeDirectory = "/home/borazan";
