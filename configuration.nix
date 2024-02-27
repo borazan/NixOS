@@ -110,6 +110,7 @@
     alacritty-theme #themes for alacritty
     playerctl #used by waybar
     nerdfonts
+    alejandra #used in rebuild.sh script for formatting rebuild output to terminal
   ];
 
   fonts.packages = with pkgs; [ nerdfonts ];
@@ -125,7 +126,8 @@
   services.getty.autologinUser = "borazan";
 
   environment.shellAliases = {
-    rebuild = " sudo nixos-rebuild switch --flake /home/borazan/nixos-config#default";
+    rebuild = "bash rebuild.sh";
+    nixify = "bash /home/borazan/nixos-config/nixify.sh";
     nvimflake = "nix run github:jordanisaacs/neovim-flake#nix";
   };
 
