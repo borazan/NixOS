@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ ... }:
 #gets imported into home.nix
 {
 
