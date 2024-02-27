@@ -122,6 +122,7 @@
 
   environment.shellAliases = {
     rebuild = "bash rebuild.sh";
+    upgrade = "bash upgrade.sh";
     nixify = "bash /home/borazan/nixos-config/nixify.sh";
     nvimflake = "nix run github:jordanisaacs/neovim-flake#nix";
   };
