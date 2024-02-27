@@ -68,7 +68,7 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.borazan = {
     isNormalUser = true;
-    description = "Bora Tuncel";
+    description = "Bora";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
       #user specific packages go here
@@ -107,16 +107,21 @@
     nixpkgs-fmt #used in vscode nix code formatter
     alacritty #terminal emulator
     alacritty-theme #themes for alacritty
+    playerctl #used by waybar
+    nerdfonts
   ];
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; }) #alacritty.nix uses FiraCode
-  ];
+  fonts.packages = with pkgs; [ nerdfonts ];
+
+  # fonts.packages = with pkgs; [
+  #   (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; }) #alacritty.nix uses FiraCode
+  # ];
 
   environment.shells = with pkgs; [ zsh ];
   programs.zsh.enable = true;
   programs.ssh.startAgent = true;
   users.defaultUserShell = pkgs.zsh;
+  services.getty.autologinUser = "borazan";
 
   environment.shellAliases = {
     rebuild = " sudo nixos-rebuild switch --flake /home/borazan/nixos-config#default";

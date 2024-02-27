@@ -13,7 +13,6 @@ in
   environment.systemPackages = with pkgs; [
     waybarCustom
     dunst #notification daemon
-    libnotify #needed for mako
     swww #wallpaper daemon
     kitty #hyprland's default terminal (remove later)
     rofi-wayland #window switcher/launcher

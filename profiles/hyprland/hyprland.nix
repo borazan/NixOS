@@ -198,7 +198,7 @@ bind = $mainMod, mouse_up, workspace, e-1
 bindm = $mainMod, mouse:272, movewindow
 bindm = $mainMod, mouse:273, resizewindow
 
-exec-once=bash ~/.config/hypr/start.sh
+exec-once=bash /home/borazan/nixos-config/profiles/hyprland/hyprland.nix
     '';
   };
 }
