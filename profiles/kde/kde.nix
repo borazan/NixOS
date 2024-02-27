@@ -1,5 +1,5 @@
 { config, lib, pkgs, ...}:
-
+#this file should be imported into configuration.nix to switch to X+KDE
 {
   # Enable the X11 windowing system.
   services.xserver.enable = true;

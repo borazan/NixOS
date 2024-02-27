@@ -4,7 +4,8 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./profiles/hyprland/hyprland-configuration.nix
+      ./profiles/hyprland/hyprland-configuration.nix #comment out if using KDE instead of hyprland
+      #./profiles/kde/kde.nix #comment out if using hyprland instead of KDE
       inputs.home-manager.nixosModules.default
     ];
 
