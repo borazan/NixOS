@@ -9,6 +9,9 @@ in
 {
   #followed this to generate: https://www.youtube.com/watch?v=61wGzIv12Ds
   programs.hyprland.enable = true;
+      environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && Hyprland
+  '';
 
   environment.systemPackages = with pkgs; [
     waybarCustom

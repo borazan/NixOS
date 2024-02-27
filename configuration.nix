@@ -4,13 +4,9 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ./profiles/hyprland-sway.nix
+      ./profiles/hyprland/hyprland-configuration.nix
       inputs.home-manager.nixosModules.default
     ];
-    programs.hyprland.enable = true;
-    environment.loginShellInit = ''
-    [[ "$(tty)" == /dev/tty1 ]] && Hyprland
-  '';
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
