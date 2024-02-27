@@ -7,8 +7,10 @@
       ./profiles/hyprland-sway.nix
       inputs.home-manager.nixosModules.default
     ];
-
-  programs.hyprland.enable = true;
+    programs.hyprland.enable = true;
+    environment.loginShellInit = ''
+    [[ "$(tty)" == /dev/tty1 ]] && Hyprland
+  '';
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
