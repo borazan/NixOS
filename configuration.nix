@@ -107,6 +107,7 @@
     nerdfonts
     alejandra #used in rebuild.sh script for formatting rebuild output to terminal
     pulseaudio #used for keyboard volume control with pactl command
+    wev #command-line utility for showing keycodes on keypress
   ];
 
   fonts.packages = with pkgs; [ nerdfonts ];
