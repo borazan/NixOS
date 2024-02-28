@@ -5,9 +5,13 @@
     settings = {
       global = {
         frame_color = "#2D2B40";
-        geometry = "350x200-18+20";
-        padding = 16;
-        horizontal_padding = 16;
+        width = 200;
+        height = 80;
+        offset = "30x30";
+        padding = 8;
+        horizontal_padding = 8;
+        icon_corner_radius = 8;
+        corner_radius = 16;
         separator_color = "#585273";
       };
 
