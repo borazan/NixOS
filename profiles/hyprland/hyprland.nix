@@ -180,10 +180,10 @@
       bindm = $mainMod, mouse:273, resizewindow
 
       #volume control
-      binde = XF86AudioRaiseVolume, exec, /run/current-system/sw/bin/pactl set-sink-volume @DEFAULT_SINK@ +5%
-      binde = XF86AudioLowerVolume, exec, /run/current-system/sw/bin/pactl set-sink-volume @DEFAULT_SINK@ -5%
-      bind = XF86AudioMute, exec, /run/current-system/sw/bin/pactl set-sink-mute @DEFAULT_SINK@ toggle
-      bind = XF86AudioPlay, exec, /run/current-system/sw/bin/playerctl play-pause
+      binde = ,XF86AudioRaiseVolume, exec, bash /home/borazan/nixos-config/profiles/hyprland/volume-control.sh up
+      binde = ,XF86AudioLowerVolume, exec, bash /home/borazan/nixos-config/profiles/hyprland/volume-control.sh down
+      bind = ,XF86AudioMute, exec, bash /home/borazan/nixos-config/profiles/hyprland/volume-control.sh mute
+      bind = ,XF86AudioPlay, exec, /run/current-system/sw/bin/playerctl play-pause
 
       exec-once = bash /home/borazan/nixos-config/profiles/hyprland/start.sh
       exec-once = playerctl
