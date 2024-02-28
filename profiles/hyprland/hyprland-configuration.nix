@@ -1,15 +1,18 @@
-{ config, lib, pkgs, ... }:
-let
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
   # Override the waybar package before adding it to systemPackages
   #needed to display workspaces correctly on hyprland
   waybarCustom = pkgs.waybar.overrideAttrs (oldAttrs: {
-    mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+    mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
   });
-in
-{
+in {
   #followed this to generate: https://www.youtube.com/watch?v=61wGzIv12Ds
   programs.hyprland.enable = true;
-      environment.loginShellInit = ''
+  environment.loginShellInit = ''
     [[ "$(tty)" == /dev/tty1 ]] && Hyprland
   '';
 
@@ -25,7 +28,6 @@ in
   #desktop portals
   xdg.portal = {
     enable = true;
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
-
 }

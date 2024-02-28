@@ -1,7 +1,5 @@
 #gets imported into hyprland.nix > home.nix
-{ ... }:
-
-{
+{...}: {
   services.dunst = {
     enable = true;
     settings = {

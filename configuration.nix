@@ -1,20 +1,23 @@
-{ config, pkgs, inputs, ... }:
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./profiles/hyprland/hyprland-configuration.nix #comment out if using KDE instead of hyprland
-      #./profiles/kde/kde.nix #comment out if using hyprland instead of KDE
-      inputs.home-manager.nixosModules.default
-    ];
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./profiles/hyprland/hyprland-configuration.nix #comment out if using KDE instead of hyprland
+    #./profiles/kde/kde.nix #comment out if using hyprland instead of KDE
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
   #AMD GPU
-  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.initrd.kernelModules = ["amdgpu"];
   hardware.opengl = {
     # Mesa
     enable = true;
@@ -23,7 +26,7 @@
   };
 
   networking.hostName = "nixos"; # Define your hostname.
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   # Enable networking
   networking.networkmanager.enable = true;
 
@@ -60,13 +63,11 @@
     jack.enable = true;
   };
 
-
-
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.borazan = {
     isNormalUser = true;
     description = "Bora";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       #user specific packages go here
     ];
@@ -74,9 +75,9 @@
 
   home-manager = {
     #also pass inputs to home-manager modules
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = {inherit inputs;};
     users = {
-      borazan.imports = [ ./home.nix ];
+      borazan.imports = [./home.nix];
     };
   };
 
@@ -110,13 +111,13 @@
     wev #command-line utility for showing keycodes on keypress
   ];
 
-  fonts.packages = with pkgs; [ nerdfonts ];
+  fonts.packages = with pkgs; [nerdfonts];
 
   # fonts.packages = with pkgs; [
   #   (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; }) #alacritty.nix uses FiraCode
   # ];
 
-  environment.shells = with pkgs; [ zsh ];
+  environment.shells = with pkgs; [zsh];
   programs.zsh.enable = true;
   programs.ssh.startAgent = true;
   users.defaultUserShell = pkgs.zsh;
@@ -130,5 +131,4 @@
   };
 
   system.stateVersion = "23.11"; # don't change
-
 }

@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
-
 {
-   imports = [
-    (import ./alacritty.nix { inherit pkgs; })
-    (import ./profiles/hyprland/hyprland.nix { inherit pkgs; }) #comment out if using KDE instead of hyprland
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    (import ./alacritty.nix {inherit pkgs;})
+    (import ./profiles/hyprland/hyprland.nix {inherit pkgs;}) #comment out if using KDE instead of hyprland
   ];
   home.username = "borazan";
   home.homeDirectory = "/home/borazan";
@@ -13,7 +15,7 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-        # # Adds the 'hello' command to your environment. It prints a friendly
+    # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
     # pkgs.hello
 
@@ -29,8 +31,8 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-      thefuck
-    ];
+    thefuck
+  ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
@@ -59,7 +61,7 @@
     enableCompletion = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "thefuck"];
+      plugins = ["git" "thefuck"];
       theme = "robbyrussell";
     };
     # Use `interactiveShellInit` to define shell functions for interactive sessions
@@ -91,6 +93,6 @@
   services.ssh-agent.enable = true;
 
   programs.zsh.prezto.ssh = {
-    identities = [ "github "];
+    identities = ["github "];
   };
 }

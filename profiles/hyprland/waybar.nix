@@ -1,22 +1,19 @@
 #gets imported into hyprland.nix > home.nix
-{ pkgs, ... }:
-
-{
-
-  home.packages = [ pkgs.inter ];
+{pkgs, ...}: {
+  home.packages = [pkgs.inter];
 
   services.playerctld.enable = true;
 
   programs.waybar = {
     enable = true;
-    package = pkgs.waybar.overrideAttrs (oldAttrs: { mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true"] ;} );
+    package = pkgs.waybar.overrideAttrs (oldAttrs: {mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];});
     settings = {
       mainBar = {
         margin = "0";
         layer = "top";
-        modules-left = [ "custom/nix" "wlr/workspaces" "mpris" ];
-        modules-center = [ "wlr/taskbar"];
-        modules-right = [ "pulseaudio" "network#interface" "network#speed" "cpu" "temperature" "clock" "tray" ];
+        modules-left = ["custom/nix" "wlr/workspaces" "mpris"];
+        modules-center = ["wlr/taskbar"];
+        modules-right = ["pulseaudio" "network#interface" "network#speed" "cpu" "temperature" "clock" "tray"];
 
         persistent_workspaces = {
           "1" = [];
@@ -40,7 +37,7 @@
           format = "{status_icon}<span weight='bold'>{artist}</span> | {title}";
           status-icons = {
             playing = "<span foreground='#A1EFD3'>󰎈</span> ";
-            paused =  "<span foreground='#FFE6B3'>󰏤</span> ";
+            paused = "<span foreground='#FFE6B3'>󰏤</span> ";
             stopped = "<span foreground='#F48FB1'>󰓛</span> ";
           };
         };
@@ -74,7 +71,7 @@
 
         temperature = {
           format = "<span foreground='#FFE6B3'>{icon} </span>{temperatureC} °C";
-          format-icons = [ "" "" "" "󰈸"];
+          format-icons = ["" "" "" "󰈸"];
         };
 
         clock = {
@@ -139,7 +136,7 @@
         background-color: #2D2B40;
         padding: 0 8px 0 8px;
       }
-      
+
       #tray * {
         padding: 0;
         margin: 0;
