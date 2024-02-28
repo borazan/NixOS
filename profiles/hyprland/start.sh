@@ -3,7 +3,7 @@
 # initializing wallpaper daemon
 sww init &
 #setting wallpaper
-#sww img ~/Wallpapers/gruvbox-mountain-village.png #wallpaper goes here
+swww img ~/Downloads/susan-wilkinson-R4mGCTTVjuo-unsplash.jpg
 
 nm-applet --indicator &
 
