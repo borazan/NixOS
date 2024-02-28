@@ -89,7 +89,8 @@
     vim
     neovim
     vimPlugins.LazyVim
-    obsidian
+    obsidian #notetaking
+    dolphin #file manager
     google-chrome
     discord
     git
@@ -109,9 +110,10 @@
     alejandra #used in rebuild.sh script for formatting rebuild output to terminal
     pulseaudio #used for keyboard volume control with pactl command
     wev #command-line utility for showing keycodes on keypress
+    procps #contains standard command-line tools for managing processes (pkill)
   ];
 
-  fonts.packages = with pkgs; [nerdfonts];
+  fonts.packages = with pkgs; [nerdfonts]; #this is bad, TODO change after selecting fonts
 
   # fonts.packages = with pkgs; [
   #   (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; }) #alacritty.nix uses FiraCode

@@ -11,28 +11,30 @@
       mainBar = {
         margin = "0";
         layer = "top";
-        modules-left = ["custom/nix" "wlr/workspaces" "mpris"];
+        modules-left = ["custom/nix" "hyprland/workspaces" "mpris"];
         modules-center = ["wlr/taskbar"];
         modules-right = ["pulseaudio" "network#interface" "network#speed" "cpu" "temperature" "clock" "tray"];
+
+        "hyprland/workspaces" = {
+          "disable-scroll" = true;
+          "all-outputs" = true;
+          "on-click" = "activate";
+          "format" = " {icon}";
+          "format-icons" = {
+            "1" = "";
+            "2" = "󰨞";
+            "3" = "";
+            "4" = "󰙯";
+            "active" = "";
+            "default" = "";
+          };
+        };
 
         persistent_workspaces = {
           "1" = [];
           "2" = [];
           "3" = [];
         };
-
-        "wlr/workspaces" = {
-          format = "{icon}";
-          on-click = "activate";
-          sort-by-number = true;
-          format-icons = {
-            "1" = "<span foreground=\"#A1EFD3\"></span>";
-            "2" = "<span foreground=\"#FFE6B3\">󰈹</span>";
-            "3" = "<span foreground=\"#91DDFF\">󰒱</span>";
-            "4" = "<span foreground=\"#D4BFFF\">󰧑</span>";
-          };
-        };
-
         mpris = {
           format = "{status_icon}<span weight='bold'>{artist}</span> | {title}";
           status-icons = {
@@ -51,7 +53,7 @@
         };
 
         pulseaudio = {
-          format = "<span foreground='#F48FB1'>󰓃</span> {volume}%";
+          format = "<span foreground='#F48FB1'>󰋋</span> {volume}%";
         };
 
         "network#interface" = {
@@ -66,7 +68,7 @@
         };
 
         cpu = {
-          format = "<span foreground='#D4BFFF'>  </span>{usage}% <span foreground='#D4BFFF'>󱐌 </span>{avg_frequency}";
+          format = "<span foreground='#D4BFFF'>  </span>{usage}%";
         };
 
         temperature = {
@@ -98,6 +100,15 @@
         font-size: 14px;
       }
 
+      #workspaces button{
+        color: #ffffff;
+      }
+
+      #workspaces button.active {
+        color: #a37ae6;
+        background-color: #2D2B40;
+      }
+      
       tooltip {
         background-color: #2D2B40;
         color: #CBE3E7;
@@ -106,15 +117,6 @@
       #custom-nix {
         color: #91DDFF;
         padding: 2px 8px;
-      }
-
-      #workspaces button {
-        padding: 2px 8px;
-        margin: 0 8px 0 0;
-      }
-
-      #workspaces button.active {
-        background-color: #2D2B40;
       }
 
       #taskbar button.active {
