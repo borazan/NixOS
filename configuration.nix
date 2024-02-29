@@ -90,7 +90,11 @@
     neovim
     vimPlugins.LazyVim
     obsidian #notetaking
-    dolphin #file manager
+    libsForQt5.dolphin #file manager
+    libsForQt5.breeze-qt5 #dolphin theme
+    libsForQt5.qt5.qtbase #dolphin test
+    libsForQt5.qtstyleplugins #dolphin test
+    libsForQt5.kio #dolphin test
     google-chrome
     discord
     git

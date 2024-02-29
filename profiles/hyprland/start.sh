@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # initializing wallpaper daemon
-sww init &
+swww init &
 #setting wallpaper
 swww img ~/Downloads/susan-wilkinson-R4mGCTTVjuo-unsplash.jpg
 
