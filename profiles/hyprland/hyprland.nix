@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 #gets imported into home.nix
 {
   imports = [
@@ -130,18 +130,26 @@
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = $mainMod, Q, exec, $terminal
-      bind = $mainMod, C, killactive,
+      bind = $mainMod, W, killactive,
       bind = $mainMod, E, exec, $fileManager
+      bind = $mainMod, F, fullscreen, 0
+      bind = $mainMod, F, exec, $notifycmd 'Fullscreen Mode'
       bind = $mainMod, V, togglefloating,
       bind = $mainMod, P, pseudo, # dwindle
       bind = $mainMod, J, togglesplit, # dwindle
       bind = $mainMod, S, exec, rofi -show drun -show-icons
 
       # Move focus with mainMod + arrow keys
-      bind = $mainMod, left, movefocus, h
-      bind = $mainMod, right, movefocus, l
-      bind = $mainMod, up, movefocus, k
-      bind = $mainMod, down, movefocus, j
+      bind=$mainMod,h,movefocus,l
+      bind=$mainMod,l,movefocus,r
+      bind=$mainMod,k,movefocus,u
+      bind=$mainMod,j,movefocus,d
+
+      #resize windows using vimkeys
+      binde = SUPERALT, h, resizeactive, -20 0
+      binde = SUPERALT, l, resizeactive, 20 0
+      binde = SUPERALT, k, resizeactive, 0 -20
+      binde = SUPERALT, j, resizeactive, 0 20
 
       # Switch workspaces with mainMod + [0-9]
       bind = $mainMod, 1, workspace, 1
@@ -188,6 +196,11 @@
       exec-once = bash /home/borazan/nixos-config/profiles/hyprland/start.sh
       exec-once = playerctl
       exec-once = pactl
+      exec-once=[workspace 1 silent] google-chrome-stable
+      exec-once=[workspace 2 silent] code
+      exec-once=[workspace 3 silent] alacritty
+      exec-once=[workspace 3 silent] alacritty
+      exec-once=[workspace 4 silent] discord
     '';
   };
 }
