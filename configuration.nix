@@ -5,7 +5,6 @@
   ...
 }: {
   imports = [
-    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./profiles/hyprland/hyprland-configuration.nix #comment out if using KDE instead of hyprland
     #./profiles/kde/kde.nix #comment out if using hyprland instead of KDE
@@ -45,7 +44,7 @@
   };
 
   # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # services.printing.enable = true;
 
   # Enable bluetooth
   hardware.bluetooth.enable = true; # enables support for Bluetooth
@@ -95,6 +94,7 @@
     gvfs #thunar trash/usb/remote location browsing
     google-chrome
     discord
+    steam
     git
     vscode
     wget #like curl
@@ -122,6 +122,12 @@
   # fonts.packages = with pkgs; [
   #   (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; }) #alacritty.nix uses FiraCode
   # ];
+
+  programs.steam = {
+  enable = true;
+  remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+  dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+};
 
   environment.shells = with pkgs; [zsh];
   programs.zsh.enable = true;

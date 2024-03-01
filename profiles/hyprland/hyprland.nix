@@ -20,7 +20,6 @@
       # Set programs that you use
       $terminal = alacritty
       $fileManager = thunar
-      $menu = wofi --show drun
 
       # Some default env vars.
       env = XCURSOR_SIZE,24
@@ -35,6 +34,7 @@
           kb_rules =
 
           follow_mouse = 1
+          mouse_refocus = false
 
           touchpad {
               natural_scroll = no
@@ -47,7 +47,7 @@
           # See https://wiki.hyprland.org/Configuring/Variables/ for more
 
           gaps_in = 5
-          gaps_out = 20
+          gaps_out = 10
           border_size = 2
           col.active_border = rgba(33ccffee) rgba(00ff99ee) 45deg
           col.inactive_border = rgba(595959aa)
@@ -123,6 +123,8 @@
       # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
       # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
       windowrulev2 = nomaximizerequest, class:.* # You'll probably like this.
+      windowrulev2 = stayfocused, title:^()$,class:^(steam)$
+      windowrulev2 = minsize 1 1, title:^()$,class:^(steam)$
 
 
       # See https://wiki.hyprland.org/Configuring/Keywords/ for more
