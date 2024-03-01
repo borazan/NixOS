@@ -19,7 +19,7 @@
 
       # Set programs that you use
       $terminal = alacritty
-      $fileManager = dolphin
+      $fileManager = thunar
       $menu = wofi --show drun
 
       # Some default env vars.
@@ -138,6 +138,7 @@
       bind = $mainMod, P, pseudo, # dwindle
       bind = $mainMod, J, togglesplit, # dwindle
       bind = $mainMod, S, exec, rofi -show drun -show-icons
+      bind = $mainMod SHIFT, S, exec, grim -g "$(slurp)" /home/borazan/Pictures/Screenshots/$(date +'%s_grim.png')
 
       # Move focus with mainMod + arrow keys
       bind=$mainMod,h,movefocus,l
@@ -145,11 +146,17 @@
       bind=$mainMod,k,movefocus,u
       bind=$mainMod,j,movefocus,d
 
-      #resize windows using vimkeys
-      binde = SUPERALT, h, resizeactive, -20 0
-      binde = SUPERALT, l, resizeactive, 20 0
-      binde = SUPERALT, k, resizeactive, 0 -20
-      binde = SUPERALT, j, resizeactive, 0 20
+      #resize windows using SUPER + ALT + vimkeys
+      binde = $mainMod ALT, h, resizeactive, -20 0
+      binde = $mainMod ALT, l, resizeactive, 20 0
+      binde = $mainMod ALT, k, resizeactive, 0 -20
+      binde = $mainMod ALT, j, resizeactive, 0 20
+
+      #move windows using SUPER + SHIFT + vimkeys
+      binde = $mainMod SHIFT, l, movewindow, r
+      binde = $mainMod SHIFT, h, movewindow, l
+      binde = $mainMod SHIFT, k, movewindow, u
+      binde = $mainMod SHIFT, j, movewindow, d
 
       # Switch workspaces with mainMod + [0-9]
       bind = $mainMod, 1, workspace, 1

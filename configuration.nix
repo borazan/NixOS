@@ -90,11 +90,9 @@
     neovim
     vimPlugins.LazyVim
     obsidian #notetaking
-    libsForQt5.dolphin #file manager
-    libsForQt5.breeze-qt5 #dolphin theme
-    libsForQt5.qt5.qtbase #dolphin test
-    libsForQt5.qtstyleplugins #dolphin test
-    libsForQt5.kio #dolphin test
+    xfce.thunar # file manager
+    xfce.xfce4-icon-theme #xfce themes for thunar
+    gvfs #thunar trash/usb/remote location browsing
     google-chrome
     discord
     git
@@ -115,6 +113,8 @@
     pulseaudio #used for keyboard volume control with pactl command
     wev #command-line utility for showing keycodes on keypress
     procps #contains standard command-line tools for managing processes (pkill)
+    grim # screenshot tool
+    slurp # select region for screenshots
   ];
 
   fonts.packages = with pkgs; [nerdfonts]; #this is bad, TODO change after selecting fonts
