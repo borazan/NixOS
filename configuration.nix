@@ -115,6 +115,7 @@
     procps #contains standard command-line tools for managing processes (pkill)
     grim # screenshot tool
     slurp # select region for screenshots
+    swayidle #auto sleep and suspend daemon
   ];
 
   fonts.packages = with pkgs; [nerdfonts]; #this is bad, TODO change after selecting fonts
