@@ -116,6 +116,7 @@
     grim # screenshot tool
     slurp # select region for screenshots
     swayidle #auto sleep and suspend daemon
+    libsForQt5.bluedevil # GUI bluetooth tool
   ];
 
   fonts.packages = with pkgs; [nerdfonts]; #this is bad, TODO change after selecting fonts
